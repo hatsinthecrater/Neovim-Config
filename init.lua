@@ -46,8 +46,8 @@ vim.opt.wrap = false
 
 vim.opt.swapfile = false
 vim.opt.backup = false
--- vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
--- vim.opt.undofile = true
+vim.opt.undodir = { os.getenv("HOME") .. "/.config/nvim/undodir" }
+vim.opt.undofile = true
 
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
@@ -145,7 +145,7 @@ vim.opt.rtp:prepend(lazypath)
 --
 -- NOTE: Here is where you install your plugins.
 require("lazy").setup({
-	--[["tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically
+	"tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically
 
 	{ -- Adds git related signs to the gutter, as well as utilities for managing changes
 		"lewis6991/gitsigns.nvim",
@@ -166,7 +166,7 @@ require("lazy").setup({
 		},
 	},
 
-  ]]
+  
 	{ -- Useful plugin to show you pending keybinds.
 		"folke/which-key.nvim",
 		event = "VimEnter", -- Sets the loading event to 'VimEnter'
@@ -223,6 +223,7 @@ require("lazy").setup({
 				{ "<leader>p", group = "Neo-Tree", mode = { "n" } },
 				{ "<leader>a", group = "Harpoon add" },
 				{ "<leader>u", group = "UndotreeToggle" },
+				{ "<leader>g", group = "[G]it", mode = { "n" } },
 			},
 		},
 	},
@@ -810,6 +811,7 @@ require("lazy").setup({
 			})
 		end,
 	},
+  ]]
 
 	{ -- You can easily change to a different colorscheme.
 		-- Change the name of the colorscheme plugin below, and then
@@ -894,7 +896,7 @@ require("lazy").setup({
 			vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
 		end,
 	},
-  ]]
+  
 
 	{
 		-- Neo-Tree
@@ -956,9 +958,7 @@ require("lazy").setup({
 		end,
 	},
 
-  --[[
-
-	{
+  	{
 		-- copilot
 		"github/copilot.vim",
 	},
@@ -967,6 +967,8 @@ require("lazy").setup({
 		-- vim-be-good
 		"ThePrimeagen/vim-be-good",
 	},
+
+ --[[
 
 	{
 		--indent-blankline
