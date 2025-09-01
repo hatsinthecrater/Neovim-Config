@@ -166,6 +166,7 @@ require("lazy").setup({
 		},
 	},
 
+  ]]
 	{ -- Useful plugin to show you pending keybinds.
 		"folke/which-key.nvim",
 		event = "VimEnter", -- Sets the loading event to 'VimEnter'
@@ -330,6 +331,9 @@ require("lazy").setup({
 			end, { desc = "[S]earch [N]eovim files" })
 		end,
 	},
+
+
+  --[[
 
 	-- LSP Plugins
 	{
@@ -890,6 +894,7 @@ require("lazy").setup({
 			vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
 		end,
 	},
+  ]]
 
 	{
 		-- Neo-Tree
@@ -950,6 +955,8 @@ require("lazy").setup({
 			end)
 		end,
 	},
+
+  --[[
 
 	{
 		-- copilot
